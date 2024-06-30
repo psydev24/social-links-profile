@@ -11,6 +11,7 @@
 
 * {
   margin: 0;
+  padding: 0;
 }
 
 body {
@@ -41,4 +42,122 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+}
+
+ul {
+  list-style: none;
+}
+
+/* */
+:root {
+  --spacing-small: 0.75rem;
+  --spacing-medium: calc(var(--spacing-small) * 2);
+  --spacing-large: calc(var(--spacing-small) * 4);
+
+  --padding-xs: calc(var(--padding-small) / 2);
+  --padding-small: 1rem;
+  --padding-large: calc(var(--padding-small) * 1.25);
+  --padding-extra: calc(var(--padding-small) * 2.25);
+
+  --font-light: 400;
+  --font-bold: 600;
+  --font-bolder: 700;
+
+  --text-base: 14px;
+  --text-header: 24px;
+
+  --bg-color-100: hsl(0, 0%, 8%);
+  --bg-color-300: hsl(0, 0%, 20%);
+
+  --font-color: hsl(0, 0%, 100%);
+
+  --primary: hsl(0, 0%, 12%);
+  --accent: hsl(75, 94%, 57%);
+}
+
+body {
+  background-color: var(--bg-color-100);
+}
+
+.profile {
+  --border-radius: 0.75rem;
+  font-family: Inter;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  color: var(--font-color);
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-base);
+  flex-direction: column;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+  background-color: var(--primary);
+  border-radius: var(--border-radius);
+  padding: var(--padding-large);
+}
+
+.img-rounded {
+  border-radius: 50%;
+}
+
+.avatar {
+  height: 5rem;
+  aspect-ratio: 1;
+}
+
+.header {
+  font-size: var(--text-header);
+}
+
+.subheading {
+  font-size: var(--text-base);
+  color: var(--accent);
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-large);
+  align-items: center;
+  text-align: center;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-xs);
+}
+
+.profile-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-small);
+  font-weight: var(--font-bolder);
+}
+
+.profile-links li {
+  --padding-small: 0.75rem;
+  cursor: pointer;
+  display: block;
+  border-radius: 6px;
+  padding: var(--padding-small) var(--padding-large);
+  background-color: var(--bg-color-300);
+  text-align: center;
+}
+
+.profile-links li:active {
+  color: var(--bg-color-300);
+  background-color: var(--accent);
+}
+
+@media (min-width: 1440px) {
+  .card {
+    padding: var(--padding-extra);
+    width: 368px;
+  }
 }
